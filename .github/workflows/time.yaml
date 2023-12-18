@@ -1,0 +1,37 @@
+name: ⌚ TIME
+
+on:
+  workflow_dispatch:
+  schedule:
+    #- cron: "15 23 * * *" #( 11:15 PM UTC 05:00 AM Morning )
+    - cron: "0 */6 * * *" #Every 6 hrs 
+#------------------------------------------------------------------------------------#
+jobs:
+  Initialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      
+    steps:        
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: main  
+
+      - name: Get DateTime
+        run: |
+          # Date Time
+          BANGLA_TIME=$(TZ='Asia/Dhaka' date +'%Y-%m-%d (%I:%M:%S %p)')
+          echo "BANGLA_TIME=$BANGLA_TIME" >> $GITHUB_ENV
+          #
+          echo "$(TZ='Asia/Dhaka' date +'%Y-%m-%d (%I:%M:%S %p)') ⌚" > "$GITHUB_WORKSPACE/main/.github/TIME"
+        continue-on-error: true
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          repository: ./main        
+          commit_user_name: RebootEx # defaults to "github-actions[bot]"
+          commit_user_email: RebootEx@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_message: "✅ Time <-- ${{ env.BANGLA_TIME }} ⌚"
+          #push_options: '--force'
