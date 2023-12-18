@@ -1,0 +1,44 @@
+name: 🇧🇩 Exposures (All)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 02 * * *" #( 02:30 AM UTC --> 08:15 AM Morning )
+#------------------------------------------------------------------------------------#  
+jobs:
+  Initialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: main  
+
+      - name: Install Coreutils
+        run: |
+          # Presets
+          set -x ; set +e
+          #--------------#
+          sudo apt update -y
+          sudo apt install coreutils curl dos2unix jq moreutils wget -y
+          # Do again, sometimes fails
+          sudo apt install coreutils curl dos2unix jq moreutils wget -y
+        continue-on-error: true
+
+      - name: Run
+        run: |
+          # Presets
+          set +x ; set +e
+          #--------------#
+          # Download
+          # Dos2unix
+          dos2unix "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
+          # chmod +xwr
+          sudo chmod +xwr "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
+          # Run
+          # Always run with STD_OUT + STD_IN >/dev/null
+          bash "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh" >/dev/null 2>&1
+        continue-on-error: true
