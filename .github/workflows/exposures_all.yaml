@@ -3,6 +3,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "30 02 * * *" #( 02:30 AM UTC --> 08:15 AM Morning )
+#------------------------------------------------------------------------------------#
+env:
+  #$BOT_ID:$BOT_TOKEN/$CHAT_ID 
+  #bot$BOT_ID has the bot prefixed : curl "https://api.telegram.org/bot$BOT_ID:$BOT_TOKEN/$CHAT_ID"
+  LOONIX_TG_BOT: "${{ secrets.BAD_BOT_TOKEN }}"
+  #Topic == Copy topic link
+  LOONIX_TOPIC_ID: "2949"    
 #------------------------------------------------------------------------------------#  
 jobs:
   Initialize:
