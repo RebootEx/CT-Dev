@@ -32,6 +32,6 @@ jobs:
         with:
           repository: ./main        
           commit_user_name: RebootEx # defaults to "github-actions[bot]"
-          commit_user_email: RebootEx@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_user_email: Rebootex030@gmail.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
           commit_message: "✅ Time <-- ${{ env.BANGLA_TIME }} ⌚"
           #push_options: '--force'
