@@ -121,13 +121,13 @@ END_TIME=$(date +%s)
 ELAPSED_TIME=$((END_TIME - START_TIME))
 ELAPSED_TIME_MINUTES=$((ELAPSED_TIME / 60))
 ELAPSED_TIME_HOURS=$((ELAPSED_TIME / 3600))
-START_TIME_NPT=$(TZ="Asia/Dhaka" date -d "@$START_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
-END_TIME_NPT=$(TZ="Asia/Dhaka" date -d "@$END_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
+START_TIME_BST=$(TZ="Asia/Dhaka" date -d "@$START_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
+END_TIME_BST=$(TZ="Asia/Dhaka" date -d "@$END_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
 # Create Body For TG_BOT
 echo '```mathematica' > "/tmp/INVENTORY_TIME.md"
 echo -e "Time Stats:" >> "/tmp/INVENTORY_TIME.md"
-echo -e "Started At: $START_TIME_NPT" >> "/tmp/INVENTORY_TIME.md"
-echo -e "Finished At: $END_TIME_NPT" >> "/tmp/INVENTORY_TIME.md"
+echo -e "Started At: $START_TIME_BST" >> "/tmp/INVENTORY_TIME.md"
+echo -e "Finished At: $END_TIME_BST" >> "/tmp/INVENTORY_TIME.md"
 echo -e "[Seconds: $ELAPSED_TIME]" >> "/tmp/INVENTORY_TIME.md"
 echo -e "[Minutes: $ELAPSED_TIME_MINUTES]" >> "/tmp/INVENTORY_TIME.md"
 echo -e "[Hours: $ELAPSED_TIME_HOURS]" >> "/tmp/INVENTORY_TIME.md"
@@ -163,9 +163,9 @@ echo '```' >> "/tmp/INVENTORY_TIME.md"
 #Send nuclei
  apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "$(cat /tmp/NUCLEI_STATS.md)"
 #Attachments
- SAFE_END_TIME_NPT="$(echo $END_TIME_NPT | sed 's/[ -]/_/g; s/:/_/g')"
- cp "/tmp/Nuclei_Exposure.log" "/tmp/Nuclei_Exposure_$SAFE_END_TIME_NPT.log"
- cp "/tmp/Nuclei_Exposure.txt" "/tmp/Nuclei_Exposure_$SAFE_END_TIME_NPT.txt"
+ SAFE_END_TIME_BST="$(echo $END_TIME_BST | sed 's/[ -]/_/g; s/:/_/g')"
+ cp "/tmp/Nuclei_Exposure.log" "/tmp/Nuclei_Exposure_$SAFE_END_TIME_BST.log"
+ cp "/tmp/Nuclei_Exposure.txt" "/tmp/Nuclei_Exposure_$SAFE_END_TIME_BST.txt"
 #Send 
- apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "*Logs & Output*" --attach "/tmp/Nuclei_Exposure_$SAFE_END_TIME_NPT.log" --attach "/tmp/Nuclei_Exposure_$SAFE_END_TIME_NPT.txt"
+ apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "*Logs & Output*" --attach "/tmp/Nuclei_Exposure_$SAFE_END_TIME_BST.log" --attach "/tmp/Nuclei_Exposure_$SAFE_END_TIME_BST.txt"
 #----------------------------------------------------------------------------#
