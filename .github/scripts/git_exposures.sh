@@ -150,17 +150,17 @@ echo '```' >> "/tmp/INVENTORY_TIME.md"
 #Add Time
  echo -e "\n$(cat /tmp/INVENTORY_TIME.md)\n" >> "/tmp/INVENTORY_TG_BOT.md"
 #Send Initial 
- apprise "tgram://$LOONIX_TG_BOT/?topic=$LOONIX_TOPIC_ID&format=markdown" -vv -b "$(cat /tmp/INVENTORY_TG_BOT.md)"
+ apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "$(cat /tmp/INVENTORY_TG_BOT.md)"
 #Nuclei Stats
  echo -e '```bash' > "/tmp/NUCLEI_STATS.md"
  echo -e "\n[+] Results:\n\n$(cat /tmp/Nuclei_Git.txt)\n" >> "/tmp/NUCLEI_STATS.md"
  echo -e '```' >> "/tmp/NUCLEI_STATS.md"
 #Send nuclei
- apprise "tgram://$LOONIX_TG_BOT/?topic=$LOONIX_TOPIC_ID&format=markdown" -vv -b "$(cat /tmp/NUCLEI_STATS.md)"
+ apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "$(cat /tmp/NUCLEI_STATS.md)"
 #Attachments
  SAFE_END_TIME_NPT="$(echo $END_TIME_NPT | sed 's/[ -]/_/g; s/:/_/g')"
  cp "/tmp/Nuclei_Git.txt" "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.txt"
  cp "/tmp/Nuclei_Git.log" "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.log"
 #Send Attachments
- apprise "tgram://$LOONIX_TG_BOT/?topic=$LOONIX_TOPIC_ID&format=markdown" -vv -b "*Logs & Output*" --attach "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.log" --attach "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.txt"
+ apprise "tgram://$LOONIX_TG_BOT/?format=markdown" -vv -b "*Logs & Output*" --attach "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.log" --attach "/tmp/Nuclei_Git_$SAFE_END_TIME_NPT.txt"
 #----------------------------------------------------------------------------#
