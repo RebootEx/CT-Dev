@@ -119,8 +119,8 @@ END_TIME=$(date +%s)
 ELAPSED_TIME=$((END_TIME - START_TIME))
 ELAPSED_TIME_MINUTES=$((ELAPSED_TIME / 60))
 ELAPSED_TIME_HOURS=$((ELAPSED_TIME / 3600))
-START_TIME_NPT=$(TZ="Asia/Kathmandu" date -d "@$START_TIME" "+%Y-%m-%d %I:%M:%S %p Nepal TIME")
-END_TIME_NPT=$(TZ="Asia/Kathmandu" date -d "@$END_TIME" "+%Y-%m-%d %I:%M:%S %p Nepal TIME")
+START_TIME_NPT=$(TZ="Asia/Dhaka" date -d "@$START_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
+END_TIME_NPT=$(TZ="Asia/Dhaka" date -d "@$END_TIME" "+%Y-%m-%d %I:%M:%S %p BD TIME")
 # Create Body For TG_BOT
 echo '```mathematica' > "/tmp/INVENTORY_TIME.md"
 echo -e "Time Stats:" >> "/tmp/INVENTORY_TIME.md"
