@@ -42,7 +42,7 @@ jobs:
           #--------------#
           # Download
           # Dos2unix
-          dos2unix "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
+          #dos2unix "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
           # chmod +xwr
           sudo chmod +xwr "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
           # Run
