@@ -50,28 +50,28 @@ fi
 #-------------------------------------------# 
 #Install Addons
 # eget for bins
-  sudo curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/eget" -o "/usr/local/bin/eget" && sudo chmod +xwr "/usr/local/bin/eget"
+  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/eget" -o "/usr/local/bin/eget" && sudo chmod +xwr "/usr/local/bin/eget"
  #7z
   sudo rm /usr/bin/7z 2>/dev/null ; sudo rm /usr/local/bin/7z 2>/dev/null
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/7z" --to "/usr/local/bin/7z"
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/7z" --to "/usr/local/bin/7z"
  #anew
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/anew" --to "/usr/local/bin/anew"
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/anew" --to "/usr/local/bin/anew"
  #Cent
-  sudo curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/cent" -o "/usr/local/bin/cent" && sudo chmod +xwr "/usr/local/bin/cent"
+  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/cent" -o "/usr/local/bin/cent" && sudo chmod +xwr "/usr/local/bin/cent"
  #Httpx
-  sudo curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/httpx" -o "/usr/local/bin/httpx" && sudo chmod +xwr "/usr/local/bin/httpx"
+  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/httpx" -o "/usr/local/bin/httpx" && sudo chmod +xwr "/usr/local/bin/httpx"
  #Inscope
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/inscope" --to "/usr/local/bin/inscope" 
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/inscope" --to "/usr/local/bin/inscope" 
  #Interactsh
-  sudo curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/interactsh-client" -o "/usr/local/bin/interactsh-client" && sudo chmod +xwr "/usr/local/bin/interactsh-client"
+  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/interactsh-client" -o "/usr/local/bin/interactsh-client" && sudo chmod +xwr "/usr/local/bin/interactsh-client"
  #Nuclei
-  sudo curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/nuclei" -o "/usr/local/bin/nuclei" && sudo chmod +xwr "/usr/local/bin/nuclei"
+  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/nuclei" -o "/usr/local/bin/nuclei" && sudo chmod +xwr "/usr/local/bin/nuclei"
  #ScopeView
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/scopeview" --to "/usr/local/bin/scopeview"
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/scopeview" --to "/usr/local/bin/scopeview"
  #Tok
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/tok" --to "/usr/local/bin/tok"
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/tok" --to "/usr/local/bin/tok"
  #YQ 
-  sudo eget "https://raw.githubusercontent.com/Azathothas/Toolpacks/main/x86_64/yq" --to "/usr/local/bin/yq" 
+  sudo eget "https://bin.ajam.dev/x86_64_Linux/yq" --to "/usr/local/bin/yq" 
 #----------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------#
