@@ -22,12 +22,12 @@ NC='\033[0m'
 
 #-------------------------------------------------------#
 #Sanity Checks
-if [ -z "$LOONIX_TG_BOT" ] && [ -z "$LOONIX_TOPIC_ID" ]; then
-    echo "\nError: TG bot token or topic id is empty"
-    echo "[+]TG Bot Token: $LOONIX_TG_BOT"
-    echo "[+]TG Bot TopicID: $LOONIX_TOPIC_ID"
- exit 1   
-fi
+# if [ -z "$LOONIX_TG_BOT" ] && [ -z "$LOONIX_TOPIC_ID" ]; then
+#     echo "\nError: TG bot token or topic id is empty"
+#     echo "[+]TG Bot Token: $LOONIX_TG_BOT"
+#     echo "[+]TG Bot TopicID: $LOONIX_TOPIC_ID"
+#  exit 1   
+# fi
 #-------------------------------------------------------#
 
 echo "check done"
