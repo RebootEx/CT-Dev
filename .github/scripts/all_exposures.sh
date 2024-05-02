@@ -30,51 +30,60 @@ if [ -z "$LOONIX_TG_BOT" ] && [ -z "$LOONIX_TOPIC_ID" ]; then
 fi
 #-------------------------------------------------------#
 
+echo "check done"
 
 
 #----------------------------------------------------------------------------#
 #Debloat
- bash <(curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Arsenal/main/misc/Github/Runners/Ubuntu/debloat.sh") 2>/dev/null
+bash <(curl -qfsSL "https://raw.githubusercontent.com/Azathothas/Arsenal/main/misc/Github/Runners/Ubuntu/debloat.sh") 2>/dev/null
 #----------------------------------------------------------------------------#
+
+echo "pip install"
+
 #Install Coreutils
- sudo apt update -y
- sudo apt install coreutils curl dos2unix jq moreutils wget -y
- pip install ansi2txt
+sudo apt update -y
+sudo apt install coreutils curl dos2unix jq moreutils wget -y
+pip install ansi2txt
 # Do again, sometimes fails
- sudo apt install coreutils curl dos2unix jq moreutils wget -y
- pip install ansi2txt         
+sudo apt install coreutils curl dos2unix jq moreutils wget -y
+pip install ansi2txt         
 # For TG BOT Notifs
- pip install apprise 
- pip install apprise 2>/dev/null
+pip install apprise 
+pip install apprise 2>/dev/null
 # For neofetch
- pip install archey4
- pip install archey4 2>/dev/null
+pip install archey4
+pip install archey4 2>/dev/null
 #-------------------------------------------# 
+
+echo "Install Addons"
+
 #Install Addons
 # eget for bins
-  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/eget" -o "/usr/local/bin/eget" && sudo chmod +xwr "/usr/local/bin/eget"
+sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/eget" -o "/usr/local/bin/eget" && sudo chmod +xwr "/usr/local/bin/eget"
  #7z
-  sudo rm /usr/bin/7z 2>/dev/null ; sudo rm /usr/local/bin/7z 2>/dev/null
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/7z" --to "/usr/local/bin/7z"
+sudo rm /usr/bin/7z 2>/dev/null ; sudo rm /usr/local/bin/7z 2>/dev/null
+sudo eget "https://bin.ajam.dev/x86_64_Linux/7z" --to "/usr/local/bin/7z"
  #anew
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/anew" --to "/usr/local/bin/anew"
+sudo eget "https://bin.ajam.dev/x86_64_Linux/anew" --to "/usr/local/bin/anew"
  #Cent
-  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/cent" -o "/usr/local/bin/cent" && sudo chmod +xwr "/usr/local/bin/cent"
+sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/cent" -o "/usr/local/bin/cent" && sudo chmod +xwr "/usr/local/bin/cent"
  #Httpx
-  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/httpx" -o "/usr/local/bin/httpx" && sudo chmod +xwr "/usr/local/bin/httpx"
+sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/httpx" -o "/usr/local/bin/httpx" && sudo chmod +xwr "/usr/local/bin/httpx"
  #Inscope
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/inscope" --to "/usr/local/bin/inscope" 
+sudo eget "https://bin.ajam.dev/x86_64_Linux/inscope" --to "/usr/local/bin/inscope" 
  #Interactsh
-  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/interactsh-client" -o "/usr/local/bin/interactsh-client" && sudo chmod +xwr "/usr/local/bin/interactsh-client"
+sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/interactsh-client" -o "/usr/local/bin/interactsh-client" && sudo chmod +xwr "/usr/local/bin/interactsh-client"
  #Nuclei
-  sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/nuclei" -o "/usr/local/bin/nuclei" && sudo chmod +xwr "/usr/local/bin/nuclei"
+sudo curl -qfsSL "https://bin.ajam.dev/x86_64_Linux/nuclei" -o "/usr/local/bin/nuclei" && sudo chmod +xwr "/usr/local/bin/nuclei"
  #ScopeView
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/scopeview" --to "/usr/local/bin/scopeview"
+sudo eget "https://bin.ajam.dev/x86_64_Linux/scopeview" --to "/usr/local/bin/scopeview"
  #Tok
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/tok" --to "/usr/local/bin/tok"
+sudo eget "https://bin.ajam.dev/x86_64_Linux/tok" --to "/usr/local/bin/tok"
  #YQ 
-  sudo eget "https://bin.ajam.dev/x86_64_Linux/yq" --to "/usr/local/bin/yq" 
+sudo eget "https://bin.ajam.dev/x86_64_Linux/yq" --to "/usr/local/bin/yq" 
 #----------------------------------------------------------------------------#
+
+echo "install done"
 
 #----------------------------------------------------------------------------#
 # Make sure we have enough baseline data
