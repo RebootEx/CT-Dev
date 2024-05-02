@@ -33,6 +33,7 @@ jobs:
           sudo apt install coreutils curl dos2unix jq moreutils wget -y
           # Do again, sometimes fails
           sudo apt install coreutils curl dos2unix jq moreutils wget -y
+          echo "install done"
         continue-on-error: true
 
       - name: Run
@@ -42,10 +43,12 @@ jobs:
           #--------------#
           # Download
           # Dos2unix
-          #dos2unix "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
+          dos2unix "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
           # chmod +xwr
+          echo "trying Chmod"
           sudo chmod +xwr "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh"
           # Run
           # Always run with STD_OUT + STD_IN >/dev/null
+          echo "bash on play"
           bash "$GITHUB_WORKSPACE/main/.github/scripts/all_exposures.sh" >/dev/null 2>&1
         continue-on-error: true
